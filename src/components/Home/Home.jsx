@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import TShirt from "../TShirt/TShirt";
 import "./Home.css";
 import Cart from "../Cart/Cart";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 
 const Home = () => {
   const tShirts = useLoaderData();
@@ -13,16 +14,8 @@ const Home = () => {
   const handleAddToCart = (tShirt) => {
     const isExist = cart.find((ts) => ts._id === tShirt._id);
     if (isExist) {
-      toast("🦄 Wow so easy!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast('Here is your toast.');
+
     } else {
       const newCart = [...cart, tShirt];
       setCart(newCart);

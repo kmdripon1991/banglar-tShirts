@@ -1,0 +1,4 @@
+.flex{
+    display: flex;
+    grid-template-columns: auto;
+}
